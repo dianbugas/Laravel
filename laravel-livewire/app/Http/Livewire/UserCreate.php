@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
 class UserCreate extends Component
@@ -19,17 +20,21 @@ class UserCreate extends Component
     public function store()
     {
         $this->validate([
-            'name' => 'required|string|nim:3',
+            'name' => 'required|string',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:8'
+            'password' => 'required'
         ]);
 
-        // User::create{[
-        //     'name' => $this->name,
-        //     'email' => $this->email,
-        //     'password' => $this->password,
-        // ]};
+        User::create([
+            'name' => $this->name,
+            'email' => $this->email,
+            'password' => Hash::make($this->password)
+        ]);
 
-        session()->flash('success','User Berhasil Dibuat');
+        $this->name = NULL;
+        $this->email = NULL;
+        $this->password = NULL;
+
+        session()->flash('success', 'User Berhasil Dibuat');
     }
 }
