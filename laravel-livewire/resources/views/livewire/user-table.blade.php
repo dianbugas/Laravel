@@ -1,3 +1,20 @@
 <div>
-    {{-- Because she competes with no one, no one can compete with her. --}}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>dian</td>
+                <td>baco</td>
+                <td>ok</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

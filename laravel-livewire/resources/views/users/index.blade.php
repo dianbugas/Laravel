@@ -10,7 +10,7 @@
 @section('content')
 <div class="container">
     <h1 class="md-4">live wire</h1>
-    <div class="row">
+    <div class="row mb-4">
         <div class="col-md-6">
             @livewire('user-create')
         </div>
