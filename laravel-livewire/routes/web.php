@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('users.index');
 });
+
+Route::get('/user/{id}', [UserController::class,'show'])->name('users.details');
