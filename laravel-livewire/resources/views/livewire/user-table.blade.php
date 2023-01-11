@@ -16,7 +16,7 @@
                     <td>{{ $item->email }}</td>
                     <td>
                         <a href="{{ route('users.details', $item->id) }}" class="badge bg-primary">Detail</a>
-                        <a href="" class="badge bg-warning">Edit</a>
+                        <a href="{{ route('users.edit', $item->id) }}" class="badge bg-warning">Edit</a>
                         <a href="" class="badge bg-danger">Delete</a>
                     </td>
                 </tr>

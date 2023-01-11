@@ -14,4 +14,12 @@ class UserController extends Controller
             'user' => $user
         ]);
     }
+
+    public function edit($id)
+    {
+        $user = User::where('id',$id)->first();
+        return view('users.edit',[
+            'user' => $user
+        ]);
+    }
 }
