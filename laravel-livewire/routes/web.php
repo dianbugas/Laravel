@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\Article;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ Route::get('/', function () {
     return view('users.index');
 })->name('users.index');
 
-Route::get('/user/{id}', [UserController::class,'show'])->name('users.details');
-Route::get('/user/{id}/edit', [UserController::class,'edit'])->name('users.edit');
+Route::get('/user/{id}', [UserController::class, 'show'])->name('users.details');
+Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
 
 Route::get('/article', Article::class)->name('article');
