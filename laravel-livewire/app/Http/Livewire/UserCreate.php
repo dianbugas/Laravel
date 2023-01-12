@@ -36,5 +36,7 @@ class UserCreate extends Component
         $this->password = NULL;
 
         session()->flash('success', 'User Berhasil Dibuat');
+
+        $this->emit('userStore');
     }
 }
