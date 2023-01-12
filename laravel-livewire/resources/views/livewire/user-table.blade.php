@@ -1,4 +1,5 @@
 <div>
+    @include('my_components.alert_success')
     <table class="table">
         <thead>
             <tr>
@@ -17,7 +18,7 @@
                     <td>
                         <a href="{{ route('users.details', $item->id) }}" class="badge bg-primary">Detail</a>
                         <a href="{{ route('users.edit', $item->id) }}" class="badge bg-warning">Edit</a>
-                        <a href="" class="badge bg-danger">Delete</a>
+                        <button wire:click="delete({{ $item->id }})" class="badge bg-danger">Delete</button>
                     </td>
                 </tr>
             @endforeach

@@ -16,7 +16,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('users.index');
-});
+})->name('users.index');
 
 Route::get('/user/{id}', [UserController::class,'show'])->name('users.details');
 Route::get('/user/{id}/edit', [UserController::class,'edit'])->name('users.edit');
