@@ -26,3 +26,8 @@ Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('users.edit
 
 Route::get('/articles', ArticleController::class)->name('articles');
 Route::get('/news', NewsController::class)->name('news');
+Route::get('/products', function () {
+    return view('product');
+})->name('product.index');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

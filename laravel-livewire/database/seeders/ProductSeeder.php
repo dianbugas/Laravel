@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Product;
+use Faker\Factory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Faker\Factory;
-use App\Models\News;
 
-class NewsSeeder extends Seeder
+class ProductSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,9 +18,9 @@ class NewsSeeder extends Seeder
     {
         $faker = Factory::create('id_ID');
         foreach (range(1, 50) as $item) {
-            News::create([
-                'title' => $faker->sentence($nbWords = 5, $variableNbWords = true),
-                'body' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            Product::create([
+                'name' => $faker->sentence($nbWords = 5, $variableNbWords = true),
+                'price' => $faker->randomElement([1, 3]),
             ]);
         }
     }
