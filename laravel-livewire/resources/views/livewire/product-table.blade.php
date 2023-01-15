@@ -1,4 +1,7 @@
 <div>
+    <div class="mb-3">
+        <input type="text" class="form-control" wire:model="search" placeholder="Cari Product">
+    </div>
     <table class="table">
         <thead>
             <tr>
