@@ -4,6 +4,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ActivityController;
 use App\Http\Livewire\Article;
 
 /*
@@ -20,6 +21,9 @@ use App\Http\Livewire\Article;
 Route::get('/', function () {
     return view('users.index');
 })->name('users.index');
+
+
+Route::get('/artivity', ActivityController::class)->name('artivity');
 
 Route::get('/user/{id}', [UserController::class, 'show'])->name('users.details');
 Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
