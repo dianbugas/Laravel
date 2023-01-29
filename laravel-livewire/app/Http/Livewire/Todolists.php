@@ -32,6 +32,7 @@ class Todolists extends Component
         $this->body = NULL;
     }
 
+    // delete
     public function delete($id)
     {
         $activity = Activity::find($id);
